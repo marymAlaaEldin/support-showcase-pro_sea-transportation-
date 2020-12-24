@@ -1,0 +1,141 @@
+﻿
+@model IEnumerable<SeaTransportation_ShowcassPro.Models.Order>
+
+@{
+    Layout = null;
+    var orderNumber = 1;
+}
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/fontawesome/all.css")
+@Scripts.Render("~/fontawesome/all.js")
+@Styles.Render("~/Content/navStyle.css")
+@Scripts.Render("~/Scripts/main.js")
+@Styles.Render("~/Content/style.css")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>orders</title>
+</head>
+<body class="mainPage-body">
+    @*<img src="~/img/wave2back.svg" style="z-index:-5;height:auto;width:100%; top:30%;left:0%;position:fixed" />
+        <svg width="100%" height="800px" style="z-index:-5;width:100%;height:70%; top:60%;left:0%;position:fixed">
+            <rect width="400" height="100"
+                  style="fill:#a2d9ff;stroke-width:10;" />
+            Sorry, your browser does not support inline SVG.
+        </svg>*@
+    <div class="container">
+
+        <nav class="A-nav col-6 offset-3">Adminstrator </nav>
+        <h2>Orders Requests</h2>
+        <hr />
+        @*<table class="table">
+                <tr class="first-tr">
+                    <th>
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NameOnCard)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CardNumber)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SecurityCode)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TotalDistance)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ShipID)
+                    </th>
+                    <th>
+                        User @Html.DisplayNameFor(model => model.ID)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PhoneNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameOnCard)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CardNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecurityCode)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TotalDistance)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ContainersNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ShipID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>*@
+        <div class="container">
+            @foreach (var item in Model)
+            {
+                if (item.OrderID == 1 || item.ID==26)
+                {
+                    continue;
+                }
+                <div class=" orders  mb-4 mr-2">
+                    <h3>order @orderNumber </h3>
+                    <div class="row col-12 ">
+                        <div class="col-4">
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.PhoneNumber) : @Html.DisplayFor(modelItem => item.PhoneNumber)</p>
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.NameOnCard) : @Html.DisplayFor(modelItem => item.NameOnCard)</p>
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.CardNumber) : @Html.DisplayFor(modelItem => item.CardNumber)</p>
+                        </div>
+                        <div class="col-4">
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.SecurityCode) : @Html.DisplayFor(modelItem => item.SecurityCode)</p>
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.TotalDistance) :@Html.DisplayFor(modelItem => item.TotalDistance)</p>
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.Weight) : @Html.DisplayFor(modelItem => item.Weight)</p>
+                        </div>
+                        <div class="col-4">
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.Date) : @Html.DisplayFor(modelItem => item.Date)</p>
+                            @*<p class="displayOrdersData">@Html.DisplayNameFor(model => model.ShipID) : @Html.DisplayFor(modelItem => item.ShipID)</p>*@
+                            <p class="displayOrdersData">@Html.DisplayNameFor(model => model.ID) : @Html.DisplayFor(modelItem => item.ID)</p>
+                        </div>
+
+                    </div>
+                    <div class="row d-flex justify-content-end col-11">
+                        @Html.ActionLink("Delete", "DeleteOrder", new { id = item.ID })
+                    </div>
+                </div>
+                orderNumber++;
+            }
+        </div>
+
+    </div>
+</body>
+</html>

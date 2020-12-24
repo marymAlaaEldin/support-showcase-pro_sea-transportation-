@@ -1,0 +1,367 @@
+html {
+    scroll-behavior: smooth;
+} 
+body {
+    color: #7fa1bb;
+}
+header
+{
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+}
+h1
+{
+    color:#143e5e;
+    font-size:3.125rem;
+    font-weight:700;
+}
+.header-btn {
+    background-color: #7fa1bb;
+    color: white;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    height: 50px;
+    box-shadow: 0px 0px 5px #7fa1bb;
+}
+
+.header-input
+{
+    border-bottom-right-radius:0px;
+    border-top-right-radius:0px;
+    border-right:none;
+    height:50px;
+    box-shadow:0px 0px 8px #cfeaff;
+}
+.wave
+{
+    width:200px;
+    margin-top:100px; 
+    display:none
+}
+.ship
+{
+     width:400px;
+}
+.col-md-6
+{
+    padding: 0px;
+}
+img
+{
+    padding: 0px;
+    width: 100%;
+}
+.inner
+{
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.small-span
+{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #2b5dad;
+}
+.first
+{
+    margin-bottom: 8vw;
+    font-size:20px;
+}
+.cont
+{
+   /** margin-top: 50px;
+    margin-bottom: 50px;
+    transform: rotateY(15deg);
+    padding: 0px;
+    background-color:#263a62;
+    color:white;
+   // background-image: linear-gradient(to right, rgb(92, 115, 158) , #2b5dad);
+    height: 400px;
+    box-shadow: 0px 0px 10px #263a62;
+    border-radius: 3px;
+    border-right:1px solid whitesmoke;
+    border-left:1px solid whitesmoke;*/
+   box-shadow: 0px 0px 8px #e6f4ff;
+   padding:30px;
+   background-color:white
+    
+}
+.cont:hover
+{
+    box-shadow: 0px 0px 9px #cfeaff;
+}
+/*.cover
+{
+    left:0%;
+    top:0%;
+    background-color:rgba(0, 0, 0,0.3);
+    width:100%;
+    height:50%;
+    z-index:1;
+    position:absolute;
+    border-bottom-left-radius:150px;
+    border-bottom-right-radius:150px;
+}*/
+.inner-txt
+{
+    margin-top: 25px;
+    padding:20px
+}
+.imgincont
+{
+    height: 50%;
+    border-bottom-left-radius:150px;
+    border-bottom-right-radius:150px;
+}
+.sec2
+{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 5vw;
+    color: #7fa1bb;
+}
+.related
+{
+    box-shadow: 0px 0px 5px #cfeaff;
+    height:100px;
+    background-color:white
+}
+.related-img
+{
+    height:90px;
+}
+h6
+{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.col-lg-6
+{
+    padding: 0px;
+}
+.sec3
+{
+    background-image: url('../img/blue-cargo.jpg');
+    background-size: cover;
+    color: wheat;
+    padding-top: 15vw;
+    padding-bottom: 15vw;
+}
+.slide-mask 
+{
+    position: relative;
+    overflow: hidden;
+    height: 160px;
+}
+.slide-group 
+{
+    position: absolute; 
+    font-size: medium;
+}
+.slide 
+{
+    height: 160px;
+    color: #fff; 
+}
+.slide-nav 
+{
+    text-align: center;
+}
+.slide-nav ul 
+{
+      margin: 0;
+      padding: 0;
+}
+.slide-nav li 
+{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    cursor: pointer;
+    margin-left: .5em;
+}
+.slide-nav li.current 
+{
+      background: rgb(143, 144, 145);
+}
+/**************************/
+.box 
+{
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.text 
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: all 1s ease;
+    opacity: 0;
+}
+/*.text:hover
+{
+
+}*/
+.hr
+{
+    background-color:goldenrod;
+    height:5px;
+    margin-bottom:0px;
+}
+.mybtn 
+{
+    border: 1px solid #bfbfbf;
+    width: 40px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+}
+mybtn:hover 
+{
+    box-shadow: 3px 2px 3px 0 rgba(0, 0, 0, 0.1), -3px -2px 3px 0 rgba(255,255,255, 0.9);
+    border-color:b
+}
+footer
+{
+    background-color:#143e5e;
+    margin:0px;
+    color:whitesmoke;
+}
+
+/*********************************/
+.mainPage-body {
+    background-color: #fafcfd;
+}
+.sidenav {
+    height: auto;
+    width:265px;
+    top: 0;
+    left: 0;
+    background-color:white;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidebar-item {
+    display: block;
+    color: #7fa1bb;
+    font-size: 18px;
+    padding: 10px
+}
+/*.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    
+}*/
+.sidenav a:hover {
+    /*box-shadow: 0px 0px 5px #e6f4ff;*/
+    border-left: 3px solid #7fa1bb;
+    text-decoration: none;
+    border-radius: 3px;
+    color: #7fa1bb;
+    background-color: #eee
+}
+table {
+    box-shadow: 0px 0px 20px #e6f4ff;
+    background-color: white;
+}
+.parent {
+    color: white;
+    padding: 70px;
+    position: relative;
+    background-color: #0074d9;
+    margin-top: 50px;
+}
+
+.element {
+    background-color: lighten(#0074d9, 20);
+    opacity: .85;
+    padding: 20px;
+    color: rgba(255,255,255,.9);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.total {
+    background-color: white;
+    border-radius: 2px;
+    padding: 6vh;
+    margin-top: 3vw;
+    box-shadow: 0px 0px 20px #e6f4ff;
+}
+h6{text-align:left}
+.svg-inbox
+{
+    width:50px;
+}
+.total-number
+{
+    font-size:20px;
+    background-color:cadetblue;
+    padding:5px;
+    border-radius:40px;
+    width:60px;
+    height:40px;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    color:gainsboro;
+}
+.A-nav {
+    box-shadow: 0px 0px 20px #e6f4ff;
+    background-color: white;
+    font-weight:bold;
+    padding:10px;
+    height:40px;
+
+}
+.orders {
+    box-shadow: 0px 0px 10px #cfeaff;
+    padding:20px;
+    background-color:white;
+    height:auto
+}
+.orders:hover {
+    transform: scale(1.01,1.01);
+    box-shadow: 0px 0px 20px #cfeaff;
+}
+.displayOrdersData{
+    font-weight:bold
+}
+.button {
+    box-shadow: 2px 2px 5px green;
+    margin-bottom: 2vw;
+    width: 130px;
+}
+.linkorder {
+    color: #7fa1bb;
+}
+.signup {
+    margin-left: 10px;
+    background-color: #7fa1bb;
+    border-radius: 3px;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 0 5px #7fa1bb;
+}
+.signup:hover {
+    color: white;
+    box-shadow: 0 0 8px #7fa1bb;
+}
+.links:hover {
+    color: #9393ca
+}

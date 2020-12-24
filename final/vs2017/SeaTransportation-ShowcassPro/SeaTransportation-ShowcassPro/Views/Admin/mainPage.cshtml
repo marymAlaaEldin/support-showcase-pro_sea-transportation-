@@ -1,0 +1,168 @@
+﻿@model IEnumerable<SeaTransportation_ShowcassPro.Models.User>
+@{
+
+    Layout = null;
+    var total = 0;
+}
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/fontawesome/all.css")
+@Scripts.Render("~/fontawesome/all.js")
+@Styles.Render("~/Content/navStyle.css")
+@Scripts.Render("~/Scripts/main.js")
+@Styles.Render("~/Content/style.css")
+
+<body class="mainPage-body container-fluid">
+    <div class="row">
+        <div class="sidenav col-2">
+            <div class="row"><img src="~/img/gear.svg" class="svg-inbox" /><h2>  Menu</h2></div>
+            <hr />
+            <a href="#services" class="sidebar-item">Contact Request</a>
+            <a href="#feedbacks" class="sidebar-item">Feedbacks</a>
+            <a href="#clients" class="sidebar-item">Users</a>
+            @Html.ActionLink("Add Admin", "AddAdmin", "Admin", new { @class = " sidebar-item" })
+            @Html.ActionLink("Users Orders", "orders", "Admin", new { @class = " sidebar-item" })
+            @Html.ActionLink("Controll Ships", "mainShipController", "Admin", new { @class = " sidebar-item" })
+            @Html.ActionLink("logout", "logout", "Admin", new { @class = "sidebar-item" })
+        </div>
+
+        <div class=" container col-10" style="height:auto">
+            <nav class="A-nav col-6 offset-3">Adminstrator</nav>
+            <section class="usersData">
+                <h2>Users Data</h2>
+                <hr />
+                <table class="table">
+                    <tr class="first-tr">
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.phoneNumber)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Password)
+                        </th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.ID == 26)
+                        { continue; }
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.phoneNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                            <td>
+                                    @Html.ActionLink("Delete", "Delete",new { id = item.ID })
+                            </td>
+                        </tr>
+                        total++;
+                    }
+
+                </table>
+
+                <div class="total col-md-4 col-12 ">
+                    <div class="row">
+                        <img src="~/img/totalusers.svg" class="svg-inbox" />
+                        <h6>Total Users</h6>
+                        <span class="total-number ml-5">@total</span>
+                    </div>
+                </div>
+            </section>
+            <section class="feedbackMessages" id="feedbacks">
+                <h2>Users Feedbacks</h2>
+                <hr />
+                <table class="table">
+                    <tr class="first-tr">
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.feedbackMessage)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        if (item.feedbackMessage != null)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.feedbackMessage)
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </table>
+            </section>
+        </div>
+    </div>
+    <hr />
+</body>
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>mainPage</title>
+    </head>
+    <body>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Admin</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdminName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AdminName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AdminName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AdminPassword, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.AdminPassword, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.AdminPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </body>
+    </html>*@

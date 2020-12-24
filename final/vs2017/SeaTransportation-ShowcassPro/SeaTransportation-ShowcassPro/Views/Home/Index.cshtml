@@ -1,0 +1,323 @@
+﻿@model SeaTransportation_ShowcassPro.Models.SIGNIN
+@{
+    ViewBag.Title = "Home Page";
+    var rate = 1;
+}
+@Styles.Render("~/Content/style.css")
+@Styles.Render("~/Content/animate.css")
+@Scripts.Render("~/Scripts/main.js")
+@Styles.Render("~/Fontawesome/fontawesome.min.css")
+@Scripts.Render("~/Fontawesome/fontawesome.min.js")
+@Scripts.Render("~/Scripts/wow.js")
+@*style>
+    @@font-face {
+        font-family: Comfortaa;
+        src:url('~/fonts/Comfortaa-VariableFont_wght.ttf');
+    }
+</style>*@
+<body style="background-color:#fafcfd;position:relative;">
+    <header class="container" style="">
+        <center>
+            <h1>Best Service</h1>
+            <p>Moving Safely Along our Marine Highways</p>
+        </center>
+        @if (Model.Name == null)
+        {
+            <form class="row d-flex justify-content-center">
+                <input class="form-control col-md-4 header-input" type="text" placeholder="email" />
+                <button class="btn header-btn">@Html.ActionLink("Sign UP Now", "SignUp", "User", null, new { @class = "nav2-item" })</button>
+            </form>
+        }
+        <div class="row d-flex justify-content-center">
+            <center class="col-12">
+                <div>
+                    <img src="~/img/wave.svg" class="col-4 d-lg-inline-flex wave" />
+                    <img src="~/img/ship.svg" class="col-lg-4 col-12 ship" />
+                </div>
+            </center>
+        </div>
+    </header>
+    <section style="box-shadow: 0px 0px 5px #cfeaff;background-color:white;padding:8px;top:30%;z-index:1;width:80px; position:fixed;" data-wow-delay="2s" class="section--blue wow bounceInLeft">
+        <div class="row m-2" style="font-size:40px;color:#4267B2"><i class="fab fa-facebook-square"></i></div>
+        <div class="row m-2" style="font-size:40px;color:#00acee"><i class="fab fa-twitter"></i></div>
+        <div class="row m-2" style="font-size:40px;color:#0e76a8"><i class="fab fa-linkedin"></i></div>
+        <div class="row m-2" style="font-size:40px;color:#25d366"><i class="fab fa-whatsapp"></i></div>
+    </section>
+    <section id="orderBox" style="box-shadow: 0px 0px 5px #cfeaff;background-color:white;padding:20px;top:80%;left:83%;width:250px; z-index :1; position:fixed;color:#7fa1bb;visibility: visible; animation-duration: 1500ms; animation-iteration-count: infinite; animation-name: pulse;" class="wow pulse animated" data-wow-iteration="infinite" data-wow-duration="1500ms">
+        <span style="float:right;cursor:pointer " id="x">x</span><h5>book your containers</h5>
+        @Html.ActionLink("make order?", "bookingContainers", "User", null, new { @class = "linkorder" })
+    </section>
+    <section class="container">
+        <div class="first">
+            <span class="small-span">home </span> >>
+            <span class="small-span"> marin navigation</span>
+            <hr>
+            <div class="row">
+                <img src="~/img/fromhome.svg" class="col-md-3" />
+                <div class="col-md-9">
+                    <h3>get our service any where</h3>
+                    <p>
+                        Our marine transportation system includes 500,000 square nautical miles of navigationally significant waters.
+                        Over 1.34 billion metric tons of cargo, valued at $1.73 trillion, shipped in and out of U.S. ports in foreign trade in 2011. Those ports support,
+                        directly and indirectly, more than 13 million American jobs. The connections between the system, coastal communities, and maritime industries is intuitive.
+                        Less recognized are the links between communities in our nation's heartland and the marine transportation system.
+                        accurate positioning services, and ocean and weather observations—play a key role in ensuring that shipments move swiftly and safely along our marine
+                        highways.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-center" style="perspective: 1000px;">
+                <div class="cont col-lg-5 col-md-6 m-1">
+                    <center><img src="~/img/cloud.svg" style="width:80px" /></center>
+
+                    <center class="inner-txt">
+                        <small>
+                            <h4>Today Weather!</h4>
+                            <p>
+                                three days weather forcast
+                            </p>
+                            <a href="#">
+                                go to know weather <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </small>
+                    </center>
+                </div>
+                <div class="cont col-lg-5 col-md-6 m-1 ">
+                    <center><img src="~/img/ocean.svg" style="width:80px" /></center>
+
+                    <center class="inner-txt ">
+                        <small>
+                            <h4>Ocean Facts!</h4>
+                            <p>
+                                Get the facts about our ocean and coasts.
+                            </p>
+                            <a href="#">
+                                go to know more! <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </small>
+                    </center>
+                </div>
+                <div class="cont col-lg-5 col-md-6 m-1">
+                    <center><img src="~/img/map.svg" style="width:80px" /></center>
+
+                    <center class="inner-txt ">
+                        <small>
+                            <h4>Story Maps</h4>
+                            <p>
+                                Sometimes a map is worth a thousand words! Explore custom maps that entertain and educate.
+                            </p>
+                            <a href="#">
+                                go to know more! <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </small>
+                    </center>
+                </div>
+                <div class="cont col-lg-5 col-md-6 m-1">
+                    <center><img src="~/img/Observations.svg" style="width:80px" /></center>
+
+                    <center class="inner-txt">
+                        <small>
+                            <h4>Ocean Observations</h4>
+                            <p>
+                                Explore our curated list of stories about the ways we observe about our ocean and coasts.
+                            </p>
+                            <a href="#">
+                                go to know more! <i class="fas fa-arrow-circle-right"></i>
+                            </a>
+                        </small>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec2 container-fluid">
+        <div class="container">
+            <h2>Related</h2>
+            <div class="row">
+                <div class="col-12 col-md-6 row related mb-4 mr-2">
+                    <img src="~/img/tide-currents.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">Tide and current data</h6>
+
+                </div>
+                <div class="col-12 col-md-6  row related mb-4 ml-2">
+                    <img src="~/img/chart.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">nautical charts</h6>
+                </div>
+                <div class="col-6  row related mb-4 mr-2">
+                    <img src="~/img/annual-report.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">NOS 2020 Annual Report</h6>
+                </div>
+                <div class="col-6  row related mb-4 ml-2">
+                    <img src="~/img/mobile.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">ocean & coast story maps</h6>
+                </div>
+                <div class="col-6  row related mb-4 mr-2">
+                    <img src=" ~/img/economy.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">our ocean economy</h6>
+                </div>
+                <div class="col-6  row related mb-4 ml-2">
+                    <img src="~/img/infographic.png" class="col-3 related-img" />
+                    <h6 class="col-6 mt-5">NOS infographics</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    @*<section class="sec3 container-fluid" style="background-image: url('~/img/blue-cargo.png'); background-color:red">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 slide-wrap">
+                        <div class="slide-mask">
+                            <div class="slide-group">
+                                <div class="slide">
+                                    <center>
+                                        <h3>New York Harbor Tidal Current Survey Completed</h3>
+                                        <p>
+                                            In 2019, oceanographers deployed 36 temporary
+                                            instruments in New York Harbor to assess tidal currents from the Hudson River to Sandy Hook Bay.
+                                        </p>
+                                    </center>
+                                </div>
+                                <div class="slide">
+                                    <center>
+                                        <h3>#EstuaryLove</h3>
+                                        <p>
+                                            Throughout the month of February,
+                                            join us as we celebrate estuaries and our 29 National Estuarine Research Reserves with special posts from NOAA's Office for Coastal Management.
+                                        </p>
+                                    </center>
+                                </div>
+                                <div class="slide">
+                                    <center>
+                                        <h3>February Update</h3>
+                                        <p>This month, I share some thoughts on a recent conference I attended, where experts in the field of ecosystem science shared their knowledge.</p>
+                                    </center>
+                                </div>
+                                <div class="slide">
+                                    <center>
+                                        <h3>Winter High Tide Bulletin</h3>
+                                        <p>There are some factors that cause the tides to be higher than what is "normally" seen from day to day.</p>
+                                    </center>
+                                </div>
+                                <div class="slide">
+                                    <center>
+                                        <h3>Nurdle Patrol</h3>
+                                        <p>Nurdles are small plastic pellets that are causing a big problem. But citizen scientists are fighting back.</p>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-nav">
+                            <ul>
+                                <li class="bullet"></li>
+                                <li class="bullet"></li>
+                                <li class="bullet"></li>
+                                <li class="bullet"></li>
+                                <li class="bullet"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+    <section style="background-color:#1f567c;height:250px;position:relative;padding:10px">
+        <a class="weatherwidget-io col-10 offset-2" style="margin-bottom:15vh;" href="https://forecast7.com/en/40d71n74d01/new-york/" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original">NEW YORK WEATHER</a>
+        <img src="~/img/sun.svg" style="position:absolute;width:380px;height:500px;left:-5%; top:-70%;" />
+    </section>
+    <script>
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+    </script>
+    @if (Model.Name != null)
+    {
+        <section class="container mt-3 p-3 ">
+            <h2>Feedback</h2>
+            <hr />
+            @*@{Model.rate =1;}
+            <div class="row">
+                <div class="col-12">
+                    <p>rate our service</p>
+                    <br />
+                    <button class="mybtn" value="1" id="myBtn1" onclick="fun1()">@rate</button>
+                    <button class="mybtn" value="2" id="myBtn2" onclick="fun2()">@(rate + 1)</button>
+                    <button class="mybtn" value="3" id="myBtn3" onclick="fun3()">@(rate + 2)</button>
+                    <button class="mybtn" value="4" id="myBtn4" onclick="fun4()">@(rate + 3)</button>
+                    <button class="mybtn" value="5" id="myBtn5" onclick="fun5()">@(rate + 4)</button>
+                </div>
+            </div>
+            <script>
+                function fun1() { rate = document.getElementById("myBtn1").value; }
+                function fun2() { rate = document.getElementById("myBtn2").value; }
+                function fun3() { rate = document.getElementById("myBtn3").value; }
+                function fun4() { rate = document.getElementById("myBtn4").value; }
+                function fun5() { rate = document.getElementById("myBtn5").value; }
+
+            </script>*@
+            @using (Html.BeginForm("feedback", "Home"))
+            {
+                <div class="row">
+                    <div class="col-12">
+                        <p>Add comment?</p>
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control ", @placeholder = "enter passowrd" })
+                        @Html.TextAreaFor(model => model.feedbackMessage, new { @class = "form-control mt-3 mb-3 ", @placeholder = "enter your message" })
+                    </div>
+                </div>
+                <input type="submit" value="submit" class="btn btn-success button ">
+            }
+        </section>
+    }
+    <section style="background-color:#f6f7f9;height:auto;margin-top:5vh; padding:50px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 style="font-size:80px">Contact Us</h2>
+                    <p style="font-size:xx-large">Get real help from real humans</p>
+                    <p style="font-size:xx-large">They’re always available to support ,and save the day!</p>
+                    <input type="submit" value="Contact Us" class="btn btn-success button mt-5 " style="width:300px;padding:15px; font-weight:500">
+                </div>
+                <div style="background-color:white;border-radius:350px;padding:10px" class="col-md-6">
+                    <img src="~/img/undraw_respond_8wjt.svg" style="" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mt-5 mb-5" id="About">
+        <h2>our team</h2>
+        <center class="row">
+            <div class="col-md-3 col-12 " style="background-color:white;box-shadow: 0px 0px 8px #e6f4ff;height:250px;padding:10px">
+                <img src="~/img/girl1.svg" style="width:80px;" />
+                <h4>mano</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem</p>
+            </div>
+            <div class="col-md-4 col-12 offset-1 " style="background-color:white;box-shadow: 0px 0px 8px #e6f4ff;height:250px;padding:10px">
+                <img src="~/img/girl2.svg" style="width:80px;" />
+                <h4>marym</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem</p>
+            </div>
+            <div class="col-md-3 col-12 offset-1" style="background-color:white;box-shadow: 0px 0px 8px #e6f4ff; height:250px;padding:10px">
+                <img src="~/img/girl3.svg" style="width:80px;" />
+                <h4>maryoom</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, autem</p>
+            </div>
+        </center>
+    </section>
+
+    <script>
+        wow = new WOW(
+            {
+                animateClass: 'animated',
+                offset: 100,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            }
+        );
+        wow.init();
+        document.getElementById('moar').onclick = function () {
+            var section = document.createElement('section');
+            section.className = 'section--purple wow fadeInDown';
+            this.parentNode.insertBefore(section, this);
+        };
+    </script>
+
+</body>

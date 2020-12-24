@@ -1,0 +1,135 @@
+﻿@model SeaTransportation_ShowcassPro.Models.Order
+
+@{
+    Layout = null;
+}
+
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/font awesome/all.css")
+@Scripts.Render("~/font awesome/all.js")
+@Styles.Render("~/Content/formstyle.css")
+@Styles.Render("~/Content/Site.css")
+<head>
+    <title>booking containers</title>
+</head>
+<body  class="signin-body">
+    <div class="container col-lg-7 signin">
+        <h1 class="h-signin">Booking Containers</h1>
+        <hr>
+        @using (Html.BeginForm("SubmitOrder", "User"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class=" signin-form container">
+                <div class="row d-flex justify-content-center">
+                    @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter phone number" })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, null, new { @class = "text-danger col-lg-7 col-10" })
+
+                    @Html.TextBoxFor(model => model.NameOnCard, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter name on card" })
+                    @Html.ValidationMessageFor(model => model.NameOnCard, null, new { @class = "text-danger col-lg-7 col-10" })
+
+                    @Html.TextBoxFor(model => model.CardNumber, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter card number" })
+                    @Html.ValidationMessageFor(model => model.CardNumber, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                    @Html.TextBoxFor(model => model.SecurityCode, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter security code" })
+                    @Html.ValidationMessageFor(model => model.SecurityCode, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                    <hr>
+                    <h5 class="col-12">Select your Destination-containers ports</h5>
+                    <div class="form-row col-12 d-flex justify-content-center">
+                        <div class="form-group col-lg-6 col-10 ">
+                            <label for="exampleFormControlSelect1"> From:</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Shanghai-china</option>
+                                <option>Singapore-Singapore</option>
+                                <option>Shenzhen-china</option>
+                                <option>Busan-South Korea </option>
+                                <option>Hong Kong-china</option>
+                                <option>Dubai-United Arab Emirates</option>
+                                <option>Rotterdam-Netherlands</option>
+                                <option>Port Klang-Malaysia</option>
+                                <option>Antwerp-Belgium</option>
+                                <option>Los Angeles-United States</option>
+                                <option>Tanjung Pelepas- Malaysia</option>
+                                <option>Hamburg-Germany</option>
+                                <option>Long Beach-United States</option>
+                                <option>Laem Chabang-Thailand</option>
+                                <option>Tanjung Priok-Indonesia</option>
+                                <option>Jeddah-Saudi Arabia</option>
+                                <option>Santos-Brazil</option>
+                                <option>Mundra-India</option>
+                                <option>Algeciras-Spain</option>
+                                <option>Piraeus-Greece</option>
+                                <option>Manila-Philippines</option>
+                                <option>Saigon-Vietnam</option>
+                                <option>Tanger Med-Morocco</option>
+                                <option>Vancouver-Canada</option>
+                                <option>Salalah-Oman</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-6 col-10">
+                            <label for="exampleFormControlSelect1"> To:</label>
+                            <select class="form-control" id="exampleFormControlSelect2">
+                                <option>Shanghai-china</option>
+                                <option>Singapore-Singapore</option>
+                                <option>Shenzhen-china</option>
+                                <option>Busan-South Korea </option>
+                                <option>Hong Kong-china</option>
+                                <option>Dubai-United Arab Emirates</option>
+                                <option>Rotterdam-Netherlands</option>
+                                <option>Port Klang-Malaysia</option>
+                                <option>Antwerp-Belgium</option>
+                                <option>Los Angeles-United States</option>
+                                <option>Tanjung Pelepas- Malaysia</option>
+                                <option>Hamburg-Germany</option>
+                                <option>Long Beach-United States</option>
+                                <option>Laem Chabang-Thailand</option>
+                                <option>Tanjung Priok-Indonesia</option>
+                                <option>Jeddah-Saudi Arabia</option>
+                                <option>Santos-Brazil</option>
+                                <option>Mundra-India</option>
+                                <option>Algeciras-Spain</option>
+                                <option>Piraeus-Greece</option>
+                                <option>Manila-Philippines</option>
+                                <option>Saigon-Vietnam</option>
+                                <option>Tanger Med-Morocco</option>
+                                <option>Vancouver-Canada</option>
+                                <option>Salalah-Oman</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr />
+                    <h5 class="col-12">About your items</h5>
+                    <div class="form-row d-flex justify-content-center">
+                        <div class=" col-lg-5 col-10 mr-lg-4">
+                            @Html.TextBoxFor(model => model.ContainersNumber, new { @class = "col-12 form-control", @placeholder = "enter conatiners numbers" })
+                            @Html.ValidationMessageFor(model => model.ContainersNumber, "", new { @class = "col-12 text-danger" })
+                        </div>
+                        <div class="col-lg-5 col-10">
+                            @Html.TextBoxFor(model => model.Weight, new { @class = "col-12 form-control", @placeholder = "enter Weight" })
+                            @Html.ValidationMessageFor(model => model.Weight, "", new { @class = " col-12 text-danger" })
+                        </div>
+                        <div class="col-lg-5 col-10">
+                            @Html.TextBoxFor(model => model.Date,new { @type = "date" , @class = "col-12 form-control", @placeholder = "enter date" })
+                        </div>                    
+                    </div>
+                    <hr />
+                    <div class="col-12 d-flex justify-content-end mt-5" >
+                        <input type="submit" value="submit order" class="btn btn-success button d-flex justify-content-center  " style="width:150px">
+                    </div>
+                    <p style="color: lightcoral; text-transform: uppercase;">you will resive mail with price</p>
+                </div>
+            </div>
+        }
+    </div>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+@section Scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

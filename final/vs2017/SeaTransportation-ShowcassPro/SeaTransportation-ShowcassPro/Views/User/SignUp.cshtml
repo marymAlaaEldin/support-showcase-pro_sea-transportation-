@@ -1,0 +1,56 @@
+﻿@model SeaTransportation_ShowcassPro.Models.User
+
+@{
+    ViewBag.Title = "Sign Up";
+    Layout = null;
+    
+}
+
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/fontawesome/all.css")
+@Scripts.Render("~/fontawesome/all.js")
+@Styles.Render("~/Content/formstyle.css")
+<head>
+    <title>Sign Up</title>
+</head>
+<body class="signin-body">
+    <div class="signin container col-md-6">
+        <h1 class="h-signin">Sign up</h1>
+        <hr>
+        @using (Html.BeginForm("AddData", "User"))//AddData is targert action(method)
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="row d-flex justify-content-center">
+                @Html.TextBoxFor(model => model.Name, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter name" })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                @Html.TextBoxFor(model => model.Email, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "aa@xx.com", type = "email" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                @Html.TextBoxFor(model => model.phoneNumber, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter phone number" })
+                @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                @Html.PasswordFor(model => model.Password, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                @Html.PasswordFor(model => model.confirmPassword, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "confirm password" })
+                @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger col-lg-7 col-10" })
+            </div>
+            <center class="col-md-12 m-3 col-12">
+                <input type="submit" value="Sign UP" class="btn btn-success col-lg-2 button col-4">
+            </center>
+        }
+    </div>
+    <img src="~/img/fish2.svg" class="fish2 d-lg-flex" />
+    <img src="~/img/wave.svg" class="wave2 d-lg-flex" />
+
+    @section scripts
+    {
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+</body>

@@ -1,0 +1,44 @@
+﻿@model SeaTransportation_ShowcassPro.Models.Admin
+
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/font awesome/all.css")
+@Scripts.Render("~/font awesome/all.js")
+@Styles.Render("~/Content/formstyle.css")
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add Admin</title>
+</head>
+<body class="signin-body">
+    <div class="signin container col-lg-6 ">
+        <h1 class="h-signin">Add Admin</h1>
+        <hr>
+        @using (Html.BeginForm("AddAdminData", "Admin"))//Check is targert action
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class=" signin-form container">
+                <div class="row d-flex justify-content-center">
+                    @Html.TextBoxFor(model => model.AdminName, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter name" })
+                    @Html.ValidationMessageFor(model => model.AdminName, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                    @Html.PasswordFor(model => model.AdminPassword, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter passowrd" })
+                    @Html.ValidationMessageFor(model => model.AdminPassword, "", new { @class = "text-danger col-lg-7 col-10" })
+                    <center class="col-md-12 m-3 col-12">
+                        <input type="submit" value="Add" class="btn btn-success button ">
+                    </center>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

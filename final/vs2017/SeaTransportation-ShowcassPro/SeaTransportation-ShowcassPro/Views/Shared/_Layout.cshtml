@@ -1,0 +1,177 @@
+﻿@model SeaTransportation_ShowcassPro.Models.SIGNIN
+@{
+    //var data = ViewBag.Message;
+}
+<!DOCTYPE html>
+<html style="margin:0px;">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title</title>
+        @Styles.Render("~/Content/mybootstrap.css")
+        @Scripts.Render("~/Scripts/mybootstrap.js")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Scripts/jquery.js")
+        @Styles.Render("~/fontawesome/all.css")
+        @Scripts.Render("~/fontawesome/all.js")
+        @Styles.Render("~/Content/navStyle.css")
+        @Scripts.Render("~/Scripts/main.js")
+        @Scripts.Render("~/Scripts/wow.js")
+
+    </head>
+    <body>
+        <center>
+            <div style="background-color:#143e5e;color:white;padding:10px;display: none;" id="baner">
+                Get a safe trip to most of the world
+                <button style="color:#143e5e;background-color:#fbd33b;padding:8px;border-radius:40px;border:none;width:130px">GO!</button>
+            </div>
+        </center>
+        <nav class="navbar navbar-expand-lg container" id="nav">
+            <a class="navbar-brand col-4" href="#">
+                <div class="row">
+                    <img src="../../img/economy.png" class="brand-img " />
+                    <div>
+                        <h2 style="color:#7fa1bb"><span style="font-size:50px;font-weight:600">M</span>Marine</h2>
+                    </div>
+                </div>
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "nav-item links" })</li>
+                    <li><a href="#About" class="nav-item links">About</a></li>
+                    <li>@Html.ActionLink("Contact Us", "Contact", "Home", new { @class = "nav-item links" })</li>
+
+
+                </ul>
+
+            </div>
+            @if (Model.Name == null)
+            {
+                <ul class="nav justify-content-end">
+                    <li>@Html.ActionLink("Sign IN", "SignIn", "User", null, new { @class = "nav-item links" })</li>
+                    <li>@Html.ActionLink("Sign UP", "SignUp", "User", null, new { @class = "nav-item signup" })</li>
+                </ul>
+            }
+            @if (Model.Name != null)
+            {
+                <img src="~/img/profile.svg" class="profile-icon" />
+            }
+        </nav>
+
+        <main class="body-content" style="margin:0px">
+
+            @RenderBody()
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-8 position-fixed " id="profile" style="clip-path: polygon(0 5%, 93% 5%, 100% 0, 100% 5%, 100% 60%, 100% 100%, 0 100%);background-color:white;z-index:2;top:20%;display:none;box-shadow: 0px 0px 50px #ddeffd; padding : 5%">
+                        <div class="container">
+                            <div class="row" style="top:10%">
+                                <img src="~/img/profile.svg" class="col-2" style="width:200px"/>
+                                <div class="font-weight-bold mb-5 col-6 offset-1">
+                                    <div class="row">
+                                        @if (Model.Name != null)
+                                        {
+                                            <div class="col-6">
+                                                <p> user name : </p>
+                                                <p> email : </p>
+                                                <p> phone number : </p>
+                                            </div>
+                                            <div class="col-6">
+                                                <p>@Model.Name</p>
+                                                <p>@Model.Email</p>
+                                                <p>@Model.phoneNumber</p>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <a href="@Url.Action("logout", "User")">
+                                        <input type="button" value="Logout" class="btn btn-success button row " style="box-shadow: 2px 2px 5px green;width:130px" />
+                                    </a>
+                                </div>
+                                <div class="col-8 offset-2 d-flex justify-content-end row">
+                                    <p><img src="~/img/mapmarkers.svg" style="width:50px" /> Moving Safely Along our Marine Highways BOOK NOW!</p>
+                                    <a href="@Url.Action("bookingContainers", "User")">
+                                        <input type="button" value="booking" class="btn btn-success button mt-5 row " style="box-shadow: 2px 2px 5px green;width:130px" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cover" style="background-color:rgba(0, 0, 0,0.3);width:100%;height:100%;position:fixed;z-index:1;top:0%;display:none"></div>
+            <footer style="padding:30px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul>
+                                <li class="nav-link footer-link">About</li>
+                                <li class="nav-link footer-link">Mission</li>
+                                <li class="nav-link footer-link">Services</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul>
+                                <li class="nav-link footer-link">Contact Us</li>
+                                <li class="nav-link footer-link">marym.alaaeldeen.s@gmail.com</li>
+                                <li class="nav-link footer-link">+2 010 075 344 91</li>
+                                <li class="nav-link footer-link">+2 010 095 384 35</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="navbar-brand" href="#">
+                                <div class="row">
+                                    <img src="../../img/economy.png" class="brand-img " />
+                                    <div>
+                                        <h2 style="color:#7fa1bb"><span style="font-size:50px;font-weight:600">M</span>Marine</h2>
+                                    </div>
+                                </div>
+                            </a>
+                            <br />
+                            <i class="fab fa-facebook-square" style="color:#7fa1bb;cursor:pointer;font-size:30px;margin:5px"></i>
+                            <i class="fab fa-twitter" style="color:#7fa1bb;cursor:pointer;font-size:30px;margin:5px"></i>
+                            <i class="fab fa-linkedin" style="color:#7fa1bb;cursor:pointer;font-size:30px;margin:5px"></i>
+                            <i class="fab fa-whatsapp" style="color:#7fa1bb;cursor:pointer;font-size:30px;margin:5px;"></i>
+                        </div>
+                    </div>
+                    <hr style="background-color:#7fa1bb" />
+                    <div class="row" style="color:#7fa1bb">
+                        © 2020 Copyright: MMarine.com
+                    </div>
+                </div>
+
+            </footer>
+        </main>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/Scripts/main.js")
+        <script>
+                wow = new WOW(
+                    {
+                        animateClass: 'animated',
+                        offset: 100,
+                        callback: function (box) {
+                            console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                        }
+                    }
+                );
+                wow.init();
+                document.getElementById('moar').onclick = function () {
+                    var section = document.createElement('section');
+                    section.className = 'section--purple wow fadeInDown';
+                    this.parentNode.insertBefore(section, this);
+                };
+        </script>
+    </body>
+</html>

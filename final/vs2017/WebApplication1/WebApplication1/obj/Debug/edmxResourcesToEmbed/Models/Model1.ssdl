@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webSiteDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'webSiteDB.dbo.Orders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="PhoneNUM" />
+      <PropertyRef Name="NameONCard" />
+      <PropertyRef Name="CardNumber" />
+      <PropertyRef Name="SecurityCode" />
+      <PropertyRef Name="Totaldistance" />
+      <PropertyRef Name="NUMContainers" />
+      <PropertyRef Name="Weight" />
+      <PropertyRef Name="TotalPrice" />
+    </Key>
+    <Property Name="PhoneNUM" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="NameONCard" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CardNumber" Type="int" Nullable="false" />
+    <Property Name="SecurityCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Totaldistance" Type="int" Nullable="false" />
+    <Property Name="NUMContainers" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Weight" Type="int" Nullable="false" />
+    <Property Name="TotalPrice" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="text" Nullable="false" />
+    <Property Name="Phone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="passowrd" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="webSiteDBModelStoreContainer">
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Orders].[PhoneNUM] AS [PhoneNUM], 
+    [Orders].[NameONCard] AS [NameONCard], 
+    [Orders].[CardNumber] AS [CardNumber], 
+    [Orders].[SecurityCode] AS [SecurityCode], 
+    [Orders].[Totaldistance] AS [Totaldistance], 
+    [Orders].[NUMContainers] AS [NUMContainers], 
+    [Orders].[Weight] AS [Weight], 
+    [Orders].[TotalPrice] AS [TotalPrice]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

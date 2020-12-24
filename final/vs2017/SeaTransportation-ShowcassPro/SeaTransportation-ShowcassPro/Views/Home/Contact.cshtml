@@ -1,0 +1,54 @@
+﻿@model SeaTransportation_ShowcassPro.Models.ContactData
+@{
+    ViewBag.Title = "Contact";
+    Layout = null;
+}
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/font awesome/all.css")
+@Scripts.Render("~/font awesome/all.js")
+@Styles.Render("~/Content/formstyle.css")
+
+<body class="signin-body">
+    <div class="signin container ">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Office</h3>
+                <address class="contact-info">
+                    One Microsoft Way<br />
+                    Redmond, WA 98052-6399<br />
+                </address>
+                <h3>Direct Contact</h3>
+                <p class="contact-info">phone: +0201007534491</p>
+                <p class="contact-info">Email: marym.alaaeldeen.s@gmail.com</p>
+            </div>
+            <div class="col-md-7 offset-md-1">
+                <h1 class="h-signin">Contact Us</h1>
+                <hr>
+                @using (Html.BeginForm("get_Contact", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class=" signin-form container">
+                        <div class="row d-flex justify-content-center">
+                            @Html.TextBoxFor(model => model.Name, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter name" })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                            @Html.TextBoxFor(model => model.Email, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "aa@xx.com" })
+                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger col-lg-7 col-10" })
+
+                            @Html.TextAreaFor(model => model.Message, new { @class = "col-10 col-lg-7 form-control m-3", @placeholder = "enter your message" })
+                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger col-lg-7 col-10" })
+                        </div>
+                        <div class="row m-3 d-flex justify-content-center">
+                            <input type="submit" value="Submit" class="btn btn-success button ">
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

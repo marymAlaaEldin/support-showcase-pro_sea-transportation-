@@ -1,0 +1,179 @@
+/*the main style and booking page style*/
+.form
+{
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 80%;
+    overflow: hidden;
+}
+.first
+{
+    background-image: url("img/containerss.jpg");
+    background-size: cover;
+    height: 200px;
+}
+.cover
+{
+    background-color: rgba(59, 99, 117, 0.3);
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+}
+h1
+{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+form
+{
+    margin-top: 5vh;
+}
+.input-group
+{
+    margin-bottom: 5vh;
+}
+.form-control
+{
+    height:50px;
+    border-radius:2px
+}
+hr
+{
+    width: 100%;
+    display:block
+}
+h5 
+{
+    color: rgb(84, 107, 179);
+    display: block;
+    color: #7fa1bb;
+}
+.total-price
+{
+    color: gray;
+    font-size: x-large;
+    font-weight: bold;
+}
+.note
+{
+    margin-top: 10vh;
+}
+h6
+{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+span
+{
+    color: gray;
+    font-weight: bold;
+}
+/*******************************************************/
+/* sign in & sign up page */
+.signin-body
+{
+    background-color:#fafcfd;
+}
+.signin
+{
+    background-color: white;
+    border-radius: 2px;
+    padding: 6vh;
+    margin-top: 3vw;
+    box-shadow: 0px 0px 20px #e6f4ff;
+}
+/*.signin-body
+{
+    background-image: linear-gradient(to right, #74a7f8 , rgb(223, 230, 245));
+}*/
+.h-signin
+{
+    color: #7fa1bb;
+    margin-bottom: 2vw;
+    font-size: 20px
+}
+.forgetpass
+{
+    color:#7fa1bb;
+}
+.havenot-acc
+{
+    display: flex;
+    justify-content: end;
+    color: grey;
+    font-size: small;
+    margin-right: 10px;
+}
+.button
+{
+    box-shadow: 2px 2px 5px green;
+    margin-bottom: 2vw;
+    width:130px;
+}
+.fish
+{
+    width:100px ;
+    position:absolute; 
+    z-index:-1; 
+    left:80%;
+    top:50%;
+    transform:rotate(10deg);
+    display:none;
+}
+.wave
+{
+    width:300px ;
+    position:absolute; 
+    z-index:-1; 
+    left:80%;
+    top:60%;
+    display:none
+}
+.fish2
+{
+    width:100px ;
+    position:absolute; 
+    z-index:-1; 
+    left:15%;
+    top:50%;
+    display:none;
+}
+.wave2
+{
+    width:300px ;
+    position:absolute; 
+    z-index:-1; 
+    left:5%;
+    display:none;
+    top:60%;
+}
+/**************************************************************************************************************/
+/*contact us*/
+.left-div
+{
+    background-image: url("~/img/und.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contact-border
+{
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 5vw;
+    box-shadow: 3px 5px 8px grey;
+}
+.col-md-3
+{
+    padding: 0px;
+}
+.contact-info
+{
+    margin: 3vw;
+    color: #7fa1bb;
+}
+.icons
+{
+    margin-right: 2vh;
+}

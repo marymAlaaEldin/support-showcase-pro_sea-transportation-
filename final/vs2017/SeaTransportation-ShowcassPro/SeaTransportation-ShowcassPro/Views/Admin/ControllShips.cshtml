@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SeaTransportation_ShowcassPro.Models.Ship>
+@{
+    Layout = null;
+}
+@Styles.Render("~/Content/mybootstrap.css")
+@Scripts.Render("~/Scripts/mybootstrap.js")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Scripts/jquery.js")
+@Styles.Render("~/fontawesome/all.css")
+@Scripts.Render("~/fontawesome/all.js")
+@Styles.Render("~/Content/navStyle.css")
+@Scripts.Render("~/Scripts/main.js")
+@Styles.Render("~/Content/style.css")
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ControllShips</title>
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <tr class="first-tr">
+                <th>
+                    @Html.DisplayNameFor(model => model.ShipID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.availability)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShipID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.availability)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ShipID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>
